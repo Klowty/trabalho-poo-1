@@ -3,7 +3,7 @@
 <b>Data: </b>31 de Março
 <b>Alunos:</b><br>
 <b> Rômulo Lima Fonseca - 1515062 </b><br>
-<b>Alisson - 0000000</b><br>
+<b> Alisson Lucas Sampaio Alves - 1514864</b><br>
 # Utilização
 IDE utilizada na elaboração do projeto - <b>IntelliJ IDEA</b><br>
 As classes do projeto estão em <b>src/com/company</b><br>
