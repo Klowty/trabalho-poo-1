@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 import static com.company.Panel.*;
 
@@ -11,16 +11,14 @@ public class Main {
         String str;
         boolean foodError = false;
         verificar=true;
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Cor do robo: ");
-        String cor = teclado.next();
+          String cor = JOptionPane.showInputDialog("Qual a cor do robô?");
 
         Robo r1 = new Robo(cor);
         color = cor;
 
         do {
-            System.out.println("Posição do alimento no eixo x: ");
-            x1 = teclado.nextInt();
+            str = JOptionPane.showInputDialog("Qual a posição do alimento no eixo x?");
+            x1 = Integer.parseInt(str);
             try {
                 if (x1 > 4)
                     throw new ValorInvalidoException();
@@ -31,13 +29,11 @@ public class Main {
             } catch (ValorInvalidoException v) {
                 v.printStackTrace();
             }
-        }
-
-        while (foodError != true);
+        }while (foodError != true);
         foodError = false;
         do {
-            System.out.println("Posição do alimento no eixo y: ");
-            y1 = teclado.nextInt();
+            str = JOptionPane.showInputDialog("e no eixo y?");
+            y1 = Integer.parseInt(str);
             try {
                 if (y1 > 4)
                     throw new ValorInvalidoException();
@@ -50,11 +46,9 @@ public class Main {
 
         while (foodError != true);
         Cenario cen = new Cenario(x1, y1);
-        System.out.println("Movimento do robô: ");
-
 
         while (r1.getX() != x1 || r1.getY() != y1) {
-            str = teclado.next();
+            str = JOptionPane.showInputDialog("Movimento do robô (up, down, left, right ou 1, 2, 3, 4 respectivamente)");
             if (str.matches("[0-9]*")) {
                 int i = Integer.parseInt(str);
                 r1.mover(i);

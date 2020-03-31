@@ -13,7 +13,7 @@ public class Panel extends JPanel {
     public static int impia, impia2;
     public String istr = impiastr;
     public static String impiastr;
-    public static String color, color2;
+    public static String color, color2,colorT,colorT2;
     public static boolean verificar = false;
 
     public void setxAlimento(int xAlimento) {
@@ -143,79 +143,98 @@ public class Panel extends JPanel {
         g2d.drawLine(75, 475, 575, 475);
         g2d.drawLine(75, 575, 575, 575);
         g2d.setFont(new Font("TimesRoman", Font.BOLD, 20));
+
         if (color.equalsIgnoreCase("rosa")) {
             g2d.setColor(Color.pink);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "#FF1493";
         }
         if (color.equalsIgnoreCase("vermelho")) {
             g2d.setColor(Color.red);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "red";
         }
         if (color.equalsIgnoreCase("cinza")) {
             g2d.setColor(Color.gray);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "gray";
         }
         if (color.equalsIgnoreCase("amarelo")) {
             g2d.setColor(Color.yellow);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "yellow";
         }
         if (color.equalsIgnoreCase("laranja")) {
             g2d.setColor(Color.orange);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "orange";
         }
         if (color.equalsIgnoreCase("verde")) {
             g2d.setColor(Color.green);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "green";
         }
         if (color.equalsIgnoreCase("azul")) {
             g2d.setColor(Color.blue);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "blue";
         }
         if (color.equalsIgnoreCase("branco")) {
             g2d.setColor(Color.white);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "white";
         }
         if (color.equalsIgnoreCase("preto")) {
             g2d.setColor(Color.black);
             g2d.drawString("Robo", xRobo, yRobo);
+            colorT = "black";
         }
 
         if (verificar == false) {
             if (color2.equalsIgnoreCase("rosa")) {
                 g2d.setColor(Color.pink);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "#FF1493";
             }
             if (color2.equalsIgnoreCase("vermelho")) {
                 g2d.setColor(Color.red);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "red";
             }
             if (color2.equalsIgnoreCase("cinza")) {
                 g2d.setColor(Color.gray);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "gray";
             }
             if (color2.equalsIgnoreCase("amarelo")) {
                 g2d.setColor(Color.yellow);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "yellow";
             }
             if (color2.equalsIgnoreCase("laranja")) {
                 g2d.setColor(Color.orange);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "orange";
             }
             if (color2.equalsIgnoreCase("verde")) {
                 g2d.setColor(Color.green);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "green";
             }
             if (color2.equalsIgnoreCase("azul")) {
                 g2d.setColor(Color.blue);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "blue";
             }
             if (color2.equalsIgnoreCase("branco")) {
                 g2d.setColor(Color.white);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "white";
             }
             if (color2.equalsIgnoreCase("preto")) {
                 g2d.setColor(Color.black);
                 g2d.drawString("Robo", xRobo2, yRobo2);
+                colorT2 = "black";
             }
         }
         Ellipse2D.Double circle = new Ellipse2D.Double(xAlimento, yAlimento, 20, 20);

@@ -1,7 +1,7 @@
 package com.company;
 
+import javax.swing.JOptionPane;
 import java.util.Random;
-import java.util.Scanner;
 
 import static com.company.Panel.*;
 
@@ -14,18 +14,15 @@ public class Main2 {
         String str;
         Boolean foodError = false;
         Random generator = new Random();
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Cor do robo: ");
-        String cor = teclado.next();
+        String cor = JOptionPane.showInputDialog("Qual a cor do robô 1?");
         Robo r1 = new Robo(cor);
         color = cor;
-        System.out.println("Cor do robo2: ");
-        String cor2 = teclado.next();
+        String cor2 = JOptionPane.showInputDialog("E do robô 2?");
         Robo r2 = new Robo(cor2);
         color2 = cor2;
         do {
-            System.out.println("Posição do alimento no eixo x: ");
-            x1 = teclado.nextInt();
+            str = JOptionPane.showInputDialog("Qual a posição do alimento no eixo x?");
+            x1 = Integer.parseInt(str);
             try {
                 if (x1 > 4)
                     throw new ValorInvalidoException();
@@ -40,8 +37,8 @@ public class Main2 {
         while (foodError != true);
         foodError = false;
         do {
-            System.out.println("Posição do alimento no eixo y: ");
-            y1 = teclado.nextInt();
+            str = JOptionPane.showInputDialog("E no eixo y?");
+            y1 = Integer.parseInt(str);
             try {
                 if (y1 > 4)
                     throw new ValorInvalidoException();
@@ -70,11 +67,17 @@ public class Main2 {
             r2.mover(aux2 + 1);
             passos2++;
             if ((r1.getX() == x1 && r1.getY() == y1)) {
+                JOptionPane.showMessageDialog(null, "<html><body>Robô <b style='color:" + colorT + ";'>"+r1.getCor()+"</b> encontrou com <b>" + passos1 + "</b> passos.</body></html>");
+                JOptionPane.showMessageDialog(null, "<html><body>Robô <b style='color:" + colorT2 + ";'>"+r2.getCor()+"</b> deu <b>" + passos2 + "</b> passos e não encontrou o alimento.</body></html>");
+
                 System.out.println("|=-=-{ Robô " + r1.getCor() + " }-=-=| encontrou com " + passos1 + " passos.");
                 System.out.println("|=-=-{ Robô " + r2.getCor() + " }-=-=| deu " + passos2 + " passos e não encontrou o alimento.");
                 break;
             }
             if (r2.getX() == x1 && r2.getY() == y1) {
+                JOptionPane.showMessageDialog(null, "<html><body>Robô <b style='color:" + colorT2 + ";'>"+r2.getCor()+"</b> encontrou com <b>" + passos2 + "</b> passos.</body></html>");
+                JOptionPane.showMessageDialog(null, "<html><body>Robô <b style='color:" + colorT + ";'>"+r1.getCor()+"</b> deu <b> " + passos1 + "</b> passos e não encontrou o alimento.</body></html>");
+
                 System.out.println("|=-=-{ Robô " + r2.getCor() + " }-=-=| encontrou com " + passos2 + " passos.");
                 System.out.println("|=-=-{ Robô " + r1.getCor() + " }-=-=| deu " + passos1 + " passos e não encontrou o alimento.");
                 break;
